@@ -1,15 +1,5 @@
 import { NextResponse } from "next/server";
 
-// This route is a stub. Wire it to a real email service before launch:
-//
-// Option A — Mailchimp: use their Marketing API `POST /lists/{list_id}/members`
-// Option B — ConvertKit: `POST https://api.convertkit.com/v3/forms/{form_id}/subscribe`
-// Option C — Resend + your own DB: send a transactional email + store the
-//   subscriber in a table (Postgres/Supabase) for later newsletters.
-//
-// Store your API key in an environment variable (e.g. CONVERTKIT_API_KEY)
-// in Vercel project settings — never hardcode it here.
-
 export async function POST(req: Request) {
   const { email } = await req.json();
 
@@ -17,15 +7,25 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  // TODO: replace with a real call to your email service provider.
-  // Example (ConvertKit):
-  // await fetch(`https://api.convertkit.com/v3/forms/${process.env.CONVERTKIT_FORM_ID}/subscribe`, {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ api_key: process.env.CONVERTKIT_API_KEY, email }),
-  // });
+  try {
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "Nikhil Patil <onboarding@resend.dev>",
+        to: email,
+        subject: "Your free QA checklists",
+        html: "<p>Thanks for signing up! Your checklists are attached — reply to this email if they don't show up.</p>",
+      }),
+    });
 
-  console.log("New subscriber:", email);
-
-  return NextResponse.json({ ok: true });
+    console.log("New subscriber:", email);
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Email send failed:", err);
+    return NextResponse.json({ error: "Failed to send" }, { status: 500 });
+  }
 }
