@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <p className="font-display text-base font-semibold">nikhil.qa</p>
+            <p className="font-display text-base font-semibold">Nikhil Patil</p>
             <p className="mt-2 max-w-xs text-sm text-fg-muted">
               QA engineer building testing tools and templates for teams that
               shiQA engineer who builds the tools testers actually reach for —
