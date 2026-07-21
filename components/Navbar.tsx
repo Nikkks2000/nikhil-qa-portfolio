@@ -20,7 +20,7 @@ export default function Navbar() {
           <span className="flex h-6 w-6 items-center justify-center rounded-xl bg-accent text-xs text-bg">
             ✓
           </span>
-          <span>nikhil.qa</span>
+          <span>Nikhil Patil</span>
         </Link>
         <div className="hidden items-center gap-8 text-sm text-fg-muted sm:flex">
           {links.map((l) => (
