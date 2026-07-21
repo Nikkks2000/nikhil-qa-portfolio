@@ -30,10 +30,10 @@ export default function ContactPage() {
                 Email
               </p>
               <a
-                href="mailto:hello@nikhilqa.in"
+                href="mailto:nikhilpatil2503@gmail.com"
                 className="focus-ring mt-2 block font-display text-lg hover:text-accent"
               >
-                hello@nikhilqa.in
+                nikhilpatil2503@gmail.com
               </a>
               <p className="mt-1 text-xs text-fg-muted">
                 Business email — replace with your registered address
