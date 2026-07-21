@@ -9,7 +9,9 @@ export default function Footer() {
             <p className="font-display text-base font-semibold">nikhil.qa</p>
             <p className="mt-2 max-w-xs text-sm text-fg-muted">
               QA engineer building testing tools and templates for teams that
-              ship without breaking things.
+              shiQA engineer who builds the tools testers actually reach for —
+              checklists, automation kits and interview prep resources made
+              from real production testing work.
             </p>
           </div>
           <div>
