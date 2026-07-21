@@ -27,19 +27,19 @@ export const projects: Project[] = [
       "Cut the time between a test failing and a ticket existing from hours to under a minute for most cases, while keeping a human in the loop for anything ambiguous.",
   },
   {
-    slug: "video-auto-captioning-saas",
+    slug: "cicd-cost-optimization",
     id: "TC-02",
-    title: "Video Auto-Captioning SaaS",
-    tag: "Full-stack · Multi-tenant",
+    title: "CI/CD Pipeline Cost Optimization",
+    tag: "DevOps · Test Automation",
     summary:
-      "Auto-captioning for Reels & Shorts with support for Hindi and Romanized Hinglish. Async processing, JWT tenancy, Stripe billing.",
-    stack: ["FastAPI", "Celery", "Redis", "Stripe"],
+      "Cut CI/CD spend by restructuring test execution — parallelization, caching and selective test runs — without slowing down releases.",
+    stack: ["GitHub Actions", "Docker", "Test Sharding", "Caching"],
     problem:
-      "Indian creators posting in Hindi or Hinglish were underserved by existing auto-caption tools, which mostly handle English well and mangle Romanized Hindi.",
+      "CI pipeline minutes were eating into infra budget every month — the full regression suite ran on every commit regardless of what actually changed, and build caching wasn't being used effectively.",
     solution:
-      "Built a FastAPI backend with Celery + Redis for async video processing, JWT-based multi-tenancy so multiple creators/agencies can use one instance safely, and Stripe for subscription billing. Added language handling tuned for Hindi and Romanized Hinglish.",
+      "Restructured the pipeline to run tests in parallel shards, added dependency and build caching, and set up path-based triggers so only the relevant test suites run on each change.",
     result:
-      "A working product with a 27-test suite covering the processing pipeline, billing, and auth — validated end-to-end before onboarding real users.",
+      "Cut average CI run time and monthly pipeline minutes significantly without reducing test coverage — releases stayed just as safe, just cheaper and faster.",
   },
   {
     slug: "ecommerce-qa-audit",
