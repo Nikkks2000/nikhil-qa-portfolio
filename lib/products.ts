@@ -10,15 +10,16 @@ export type Product = {
 };
 
 export const products: Product[] = [
-  {
-    slug: "qa-testing-checklist-pack",
-    name: "QA Testing Checklist Pack",
-    tagline: "20 checklists for web, API and mobile testing",
-    price: 299,
+{
+    slug: "complete-qa-resource-kit",
+    name: "Complete QA Resource Kit",
+    tagline: "Checklists, HR interview prep & every QA resource in one place",
+    price: 399,
     description:
-      "The exact checklists used to test production features across healthcare and banking projects — functional, regression, API and cross-browser, ready to adapt to your project.",
+      "Everything I use myself — 20 testing checklists, an HR-round interview prep PDF with common questions and expected answer structure, and quick-reference resources for QA interviews and daily work.",
     includes: [
       "20 ready-to-use checklists (PDF + editable Sheet)",
+      "HR interview prep PDF — common questions, salary/notice period talking points",
       "Functional, regression, API, mobile & cross-browser coverage",
       "Bug report template included",
       "Instant download after payment",
