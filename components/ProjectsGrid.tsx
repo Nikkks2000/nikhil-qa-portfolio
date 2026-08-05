@@ -19,13 +19,13 @@ export default function ProjectsGrid() {
           <Link
             key={p.id}
             href={`/work/${p.slug}`}
-            className="focus-ring group rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent/60"
+            className="focus-ring group rounded-className="focus-ring group godmode-card rounded-2xl border border-border bg-surface p-6"2xl border border-border bg-surface p-6 transition-colors hover:border-accent/60"
           >
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs text-fg-muted">{p.id}</span>
-              <span className="rounded-full border border-accent/40 px-2 py-0.5 font-mono text-[11px] text-accent">
-                PASS
-              </span>
+<span className="rounded-full border border-accent/40 px-2 py-0.5 font-mono text-[11px] text-accent transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_10px_var(--accent)]">
+  PASS
+</span>
             </div>
             <h3 className="mt-4 font-display text-lg font-semibold">
               {p.title}
