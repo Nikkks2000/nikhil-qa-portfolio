@@ -18,11 +18,14 @@ export default function CtaBanner({
           <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
             {heading}
           </h2>
-          <p className="mt-2 max-w-md text-sm text-fg-muted">{subtext}</p>
+          <p className="mt-2 max-w-md text-sm text-fg-muted">
+            {subtext}
+          </p>
         </div>
+
         <Link
           href={href}
-          className="focus-ring shrink-0 roundedclassName="focus-ring godmode-btn godmode-ring shrink-0 rounded-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg"-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+          className="focus-ring godmode-btn godmode-ring shrink-0 rounded-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
         >
           {label}
         </Link>
