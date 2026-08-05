@@ -22,7 +22,7 @@ export default function CtaBanner({
         </div>
         <Link
           href={href}
-          className="focus-ring shrink-0 rounded-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+          className="focus-ring shrink-0 roundedclassName="focus-ring godmode-btn godmode-ring shrink-0 rounded-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg"-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
         >
           {label}
         </Link>
