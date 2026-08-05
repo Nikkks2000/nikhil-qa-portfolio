@@ -20,37 +20,37 @@ export default function Footer() {
             </p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/#work" className="focus-ring hover:text-accent">
+                <Link href="/#work" className="focus-ring godmode-link hover:text-accent">
                   Work
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="focus-ring hover:text-accent">
+                <Link href="/shop" className="focus-ring godmode-link hover:text-accent">
                   Shop
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="focus-ring hover:text-accent">
+                <Link href="/blog" className="focus-ring godmode-link hover:text-accent">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/tools/test-data-generator" className="focus-ring hover:text-accent">
+                <Link href="/tools/test-data-generator" className="focus-ring godmode-link hover:text-accent">
                   Free Tools
                 </Link>
               </li>
               <li>
-                <Link href="/premium" className="focus-ring hover:text-accent">
+                <Link href="/premium" className="focus-ring godmode-link hover:text-accent">
                   Premium
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="focus-ring hover:text-accent">
+                <Link href="/faq" className="focus-ring godmode-link hover:text-accent">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="focus-ring hover:text-accent">
+                <Link href="/contact" className="focus-ring godmode-link hover:text-accent">
                   Contact
                 </Link>
               </li>
@@ -62,17 +62,17 @@ export default function Footer() {
             </p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/legal/terms" className="focus-ring hover:text-accent">
+                <Link href="/legal/terms" className="focus-ring godmode-link hover:text-accent">
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="/legal/privacy" className="focus-ring hover:text-accent">
+                <Link href="/legal/privacy" className="focus-ring godmode-link hover:text-accent">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/legal/refund" className="focus-ring hover:text-accent">
+                <Link href="/legal/refund" className="focus-ring godmode-link hover:text-accent">
                   Refund Policy
                 </Link>
               </li>
