@@ -33,7 +33,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <blockquote
               key={t.name}
-              className="rounded-2xl border border-border bg-surface p-6"
+              className="godmode-card rounded-2xl border border-border bg-surface p-6"
             >
               <p className="text-sm leading-relaxed text-fg">
                 &ldquo;{t.quote}&rdquo;
