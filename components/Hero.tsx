@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import TiltCard from "@/components/TiltCard";
 
 const checks = [
   { label: "portfolio.render()", status: "PASS", time: "12ms" },
@@ -49,20 +50,20 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="#work"
-              className="focus-ring rounded-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+              className="focus-ring godmode-btn rounded-xl bg-accent px-6 py-3 font-mono text-sm font-medium text-bg"
             >
               View work
             </Link>
             <Link
               href="/shop"
-              className="focus-ring rounded-xl border border-border px-6 py-3 font-mono text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+              className="focus-ring godmode-btn godmode-ring rounded-xl border border-border px-6 py-3 font-mono text-sm font-medium text-fg hover:border-accent hover:text-accent"
             >
               Browse tools →
             </Link>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-surface font-mono text-sm shadow-2xl shadow-black/40">
+        <TiltCard className="rounded-2xl border border-border bg-surface font-mono text-sm shadow-2xl shadow-black/40">
           <div className="flex items-center gap-1.5 border-b border-border px-4 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#e8544d]" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber" />
@@ -87,7 +88,7 @@ export default function Hero() {
               </div>
             )}
           </div>
-        </div>
+        </TiltCard>
       </div>
     </section>
   );
