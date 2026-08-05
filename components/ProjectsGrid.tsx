@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import TiltCard from "@/components/TiltCard";
 
 export default function ProjectsGrid() {
   return (
@@ -16,38 +17,39 @@ export default function ProjectsGrid() {
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
-          <Link
-            key={p.id}
-            href={`/work/${p.slug}`}
-            className="focus-ring group rounded-className="focus-ring group godmode-card rounded-2xl border border-border bg-surface p-6"2xl border border-border bg-surface p-6 transition-colors hover:border-accent/60"
-          >
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs text-fg-muted">{p.id}</span>
-<span className="rounded-full border border-accent/40 px-2 py-0.5 font-mono text-[11px] text-accent transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_10px_var(--accent)]">
-  PASS
-</span>
-            </div>
-            <h3 className="mt-4 font-display text-lg font-semibold">
-              {p.title}
-            </h3>
-            <p className="mt-1 font-mono text-xs text-fg-muted">{p.tag}</p>
-            <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-              {p.summary}
-            </p>
-            <div className="mt-5 flex flex-wrap gap-1.5">
-              {p.stack.map((s) => (
-                <span
-                  key={s}
-                  className="rounded bg-surface-2 px-2 py-1 font-mono text-[11px] text-fg-muted"
-                >
-                  {s}
+          <TiltCard key={p.id} maxTilt={8} className="rounded-2xl">
+            <Link
+              href={`/work/${p.slug}`}
+              className="focus-ring group block rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent/60"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs text-fg-muted">{p.id}</span>
+                <span className="rounded-full border border-accent/40 px-2 py-0.5 font-mono text-[11px] text-accent transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_10px_var(--accent)]">
+                  PASS
                 </span>
-              ))}
-            </div>
-            <p className="mt-5 font-mono text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
-              Read case study →
-            </p>
-          </Link>
+              </div>
+              <h3 className="mt-4 font-display text-lg font-semibold">
+                {p.title}
+              </h3>
+              <p className="mt-1 font-mono text-xs text-fg-muted">{p.tag}</p>
+              <p className="mt-3 text-sm leading-relaxed text-fg-muted">
+                {p.summary}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {p.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="rounded bg-surface-2 px-2 py-1 font-mono text-[11px] text-fg-muted"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-5 font-mono text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                Read case study →
+              </p>
+            </Link>
+          </TiltCard>
         ))}
       </div>
     </section>
