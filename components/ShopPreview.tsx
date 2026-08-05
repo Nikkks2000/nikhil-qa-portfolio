@@ -16,7 +16,7 @@ export default function ShopPreview() {
           </div>
           <Link
             href="/shop"
-            className="focus-ring hidden font-mono text-sm text-fg-muted hover:text-accent sm:block"
+            className="focus-ring godmode-link hidden font-mono text-sm text-fg-muted hover:text-accent sm:block"
           >
             View all →
           </Link>
@@ -25,7 +25,7 @@ export default function ShopPreview() {
           {products.map((p) => (
             <div
               key={p.slug}
-              className="flex flex-col justify-between rounded-2xl border border-border bg-surface p-6"
+              className="godmode-card flex flex-col justify-between rounded-2xl border border-border bg-surface p-6"
             >
               <div>
                 <h3 className="font-display text-lg font-semibold">
@@ -39,7 +39,7 @@ export default function ShopPreview() {
                 </span>
                 <Link
                   href={`/shop#${p.slug}`}
-                  className="focus-ring rounded-xl border border-border px-4 py-2 font-mono text-xs font-medium transition-colors hover:border-accent hover:text-accent"
+                  className="focus-ring godmode-btn rounded-xl border border-border px-4 py-2 font-mono text-xs font-medium hover:border-accent hover:text-accent"
                 >
                   View details
                 </Link>
