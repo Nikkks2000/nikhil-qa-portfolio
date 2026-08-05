@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
@@ -20,7 +18,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="focus-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border text-fg-muted transition-colors hover:border-accent hover:text-accent"
+      className="focus-ring godmode-spin flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border text-fg-muted transition-colors hover:border-accent hover:text-accent"
     >
       {isDark ? (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
