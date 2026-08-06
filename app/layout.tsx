@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Nikhil Patil — QA Engineer & Test Automation Tools",
@@ -37,8 +38,15 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-bg text-fg font-body">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          <>
+            <CustomCursor />
+            {children}
+          </>
         </ThemeProvider>
       </body>
     </html>

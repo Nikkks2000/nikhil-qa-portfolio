@@ -2,86 +2,75 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-surface/40">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-10 sm:grid-cols-3">
+    <footer className="relative overflow-hidden border-t border-border bg-surface">
+      {/* Glow */}
+      <div className="absolute left-1/2 top-0 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]" />
+
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-12 lg:grid-cols-2">
+          {/* Left */}
           <div>
-            <p className="font-display text-base font-semibold">Nikhil Patil</p>
-            <p className="mt-2 max-w-xs text-sm text-fg-muted">
-              QA engineer building testing tools and templates for teams that
-              shiQA engineer who builds the tools testers actually reach for —
-              checklists, automation kits and interview prep resources made
-              from real production testing work.
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-accent">
+              NIKHIL PATIL
             </p>
+
+            <h2 className="mt-4 font-display text-3xl font-bold">
+              Software Test Engineer
+            </h2>
+
+            <p className="mt-4 max-w-md leading-7 text-fg-muted">
+              Passionate about building reliable automation frameworks,
+              improving software quality and delivering bug-free user
+              experiences.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/resume.pdf"
+                className="godmode-btn rounded-xl bg-accent px-5 py-3 font-medium text-bg"
+              >
+                Resume
+              </Link>
+
+              <Link
+                href="/contact"
+                className="rounded-xl border border-border px-5 py-3 transition hover:border-accent hover:text-accent"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
-          <div>
-            <p className="font-mono text-xs uppercase tracking-wider text-fg-muted">
-              Site
-            </p>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <Link href="/#work" className="focus-ring godmode-link hover:text-accent">
-                  Work
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="focus-ring godmode-link hover:text-accent">
-                  Shop
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="focus-ring godmode-link hover:text-accent">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/tools/test-data-generator" className="focus-ring godmode-link hover:text-accent">
-                  Free Tools
-                </Link>
-              </li>
-              <li>
-                <Link href="/premium" className="focus-ring godmode-link hover:text-accent">
-                  Premium
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="focus-ring godmode-link hover:text-accent">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="focus-ring godmode-link hover:text-accent">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-mono text-xs uppercase tracking-wider text-fg-muted">
-              Legal
-            </p>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <Link href="/legal/terms" className="focus-ring godmode-link hover:text-accent">
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/legal/privacy" className="focus-ring godmode-link hover:text-accent">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/legal/refund" className="focus-ring godmode-link hover:text-accent">
-                  Refund Policy
-                </Link>
-              </li>
-            </ul>
+
+          {/* Right */}
+          <div className="grid gap-5">
+            <Link
+              href="mailto:nikhilpatil2503@gmail.com"
+              className="godmode-card rounded-2xl border border-border bg-surface-2 p-5 transition hover:border-accent"
+            >
+              📧 nikhilpatil2503@gmail.com
+            </Link>
+
+            <Link
+              href="https://github.com/Nikkks2000"
+              target="_blank"
+              className="godmode-card rounded-2xl border border-border bg-surface-2 p-5 transition hover:border-accent"
+            >
+              💻 GitHub
+            </Link>
+
+            <Link
+              href="https://linkedin.com/in/nikhil-patil-236691265"
+              target="_blank"
+              className="godmode-card rounded-2xl border border-border bg-surface-2 p-5 transition hover:border-accent"
+            >
+              🔗 LinkedIn
+            </Link>
           </div>
         </div>
-        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-xs text-fg-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Nikhil Patil. All rights reserved.</p>
-          <p className="font-mono">Made in Mumbai, India</p>
+
+        <div className="mt-16 border-t border-border pt-8 text-center text-sm text-fg-muted">
+          © {new Date().getFullYear()} Nikhil Patil • Built with Next.js &
+          Tailwind CSS
         </div>
       </div>
     </footer>

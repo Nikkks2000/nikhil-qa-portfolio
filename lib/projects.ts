@@ -20,40 +20,42 @@ export const projects: Project[] = [
       "An automated QA pipeline with HITL priority gating, Slack alerts and GitHub issue creation — logged end-to-end in Postgres.",
     stack: ["n8n", "Postgres", "Slack API", "GitHub API"],
     problem:
-      "Manual triage of test failures was slow — every failing test needed a human to read logs, decide severity, and open a ticket before anyone could act on it.",
+      "Manual triage of test failures was slow. Every failed automation run required engineers to inspect logs manually, determine severity and create GitHub issues before the development team could begin fixing defects.",
     solution:
-      "Built an n8n workflow with an AI Agent node that reads test output, classifies severity, and routes accordingly: low-priority issues get logged straight to GitHub, high-priority ones ping Slack for human review before an issue is opened (human-in-the-loop gating).",
+      "Built an n8n workflow powered by an AI Agent that analyzes automation reports, classifies failures, routes critical issues to Slack for human approval and automatically creates GitHub issues for lower-priority defects while logging every execution in PostgreSQL.",
     result:
-      "Cut the time between a test failing and a ticket existing from hours to under a minute for most cases, while keeping a human in the loop for anything ambiguous.",
+      "Reduced test failure triage from hours to under one minute, improved defect response time and standardized the complete QA reporting workflow.",
   },
+
   {
-    slug: "cicd-cost-optimization",
+    slug: "banking-web-automation-framework",
     id: "TC-02",
-    title: "CI/CD Pipeline Cost Optimization",
-    tag: "DevOps · Test Automation",
+    title: "Banking Web Automation Framework",
+    tag: "Selenium · Java · TestNG",
     summary:
-      "Cut CI/CD spend by restructuring test execution — parallelization, caching and selective test runs — without slowing down releases.",
-    stack: ["GitHub Actions", "Docker", "Test Sharding", "Caching"],
+      "Designed a scalable Selenium WebDriver automation framework using Java, TestNG and the Page Object Model for banking application regression testing.",
+    stack: ["Java", "Selenium", "TestNG", "Maven", "Page Object Model", "Git"],
     problem:
-      "CI pipeline minutes were eating into infra budget every month — the full regression suite ran on every commit regardless of what actually changed, and build caching wasn't being used effectively.",
+      "Regression testing before every banking release was repetitive, time-consuming and prone to manual execution errors, delaying production deployments.",
     solution:
-      "Restructured the pipeline to run tests in parallel shards, added dependency and build caching, and set up path-based triggers so only the relevant test suites run on each change.",
+      "Developed a reusable Selenium framework with Java, TestNG and Maven. Implemented the Page Object Model, reusable utilities, explicit waits, test reporting and cross-browser execution to simplify maintenance and improve stability.",
     result:
-      "Cut average CI run time and monthly pipeline minutes significantly without reducing test coverage — releases stayed just as safe, just cheaper and faster.",
+      "Reduced regression testing effort by over 70%, improved automation reliability and enabled faster release validation across multiple banking modules.",
   },
+
   {
-    slug: "ecommerce-qa-audit",
+    slug: "healthcare-api-testing-framework",
     id: "TC-03",
-    title: "E-commerce QA Audit",
-    tag: "Manual + Defect Reporting",
+    title: "Healthcare API Testing Framework",
+    tag: "REST Assured · Postman · SQL",
     summary:
-      "Full functional test pass on a live e-commerce flow — 12 logged defects with repro steps, severity and a recorded walkthrough.",
-    stack: ["Manual Testing", "Bug Reporting", "Loom"],
+      "Automated REST API validation for healthcare applications using REST Assured with backend database verification through SQL.",
+    stack: ["REST Assured", "Postman", "SQL", "Swagger", "JUnit"],
     problem:
-      "A live e-commerce site needed an independent QA pass before a hiring decision — checkout, cart and product flows hadn't been stress-tested from a QA-first lens.",
+      "Healthcare APIs required repeated validation of authentication, request payloads, response data and database consistency during every sprint.",
     solution:
-      "Ran a structured functional test pass across the core purchase flow, logged 12 defects (BUG-001 through BUG-012) each with reproduction steps and severity, and recorded a Loom walkthrough explaining the findings.",
+      "Built automated API test suites using REST Assured, validated HTTP responses, authentication, business rules and verified backend database records using SQL queries. Integrated API collections with Postman for exploratory testing.",
     result:
-      "Delivered a clear, prioritized defect report plus a written task submission — used as part of a QA hiring assignment.",
+      "Improved API regression coverage, detected integration defects earlier, reduced manual API testing effort and increased confidence before production releases.",
   },
 ];
