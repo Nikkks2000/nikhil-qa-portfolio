@@ -5,6 +5,7 @@ import Link from "next/link";
 import HeroScene from "@/components/HeroScene";
 import QADashboard from "@/components/QADashboard";
 import Magnetic from "@/components/Magnetic";
+import Profile3D from "@/components/Profile3D";
 
 const checks = [
   { label: "portfolio.render()", status: "PASS", time: "12ms" },
@@ -19,15 +20,20 @@ export default function Hero() {
   useEffect(() => {
     if (visible >= checks.length) return;
 
-    const t = setTimeout(() => setVisible((v) => v + 1), 450);
+    const timer = setTimeout(() => {
+      setVisible((v) => v + 1);
+    }, 450);
 
-    return () => clearTimeout(t);
+    return () => clearTimeout(timer);
   }, [visible]);
 
   return (
-    <section className="relative overflow-hidden border-b border-border grid-bg">
-      {/* Aurora */}
-      <div aria-hidden className="absolute inset-0 -z-10">
+    <section className="relative overflow-visible border-b border-border grid-bg">
+      {/* Aurora Background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-20 overflow-hidden"
+      >
         <div
           className="absolute rounded-full blur-3xl opacity-25"
           style={{
@@ -58,19 +64,19 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
-            "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
+            "linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
 
-      <div className="relative mx-auto grid min-h-[90vh] max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+      <div className="relative z-10 mx-auto grid min-h-[90vh] max-w-7xl items-center gap-20 px-6 py-12 lg:grid-cols-[1fr_560px]">
         {/* LEFT */}
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-accent">
+          <p className="font-mono text-xs uppercase tracking-[0.35em] text-accent">
             QA Engineer • Test Automation
           </p>
 
-          <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             I test software for a living.
             <br />
             <span className="gradient-text">Now I build the tools for it.</span>
@@ -81,7 +87,7 @@ export default function Hero() {
             real work in healthcare and banking QA—not theory.
           </p>
 
-          {/* BUTTONS */}
+          {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Magnetic>
               <Link
@@ -102,27 +108,27 @@ export default function Hero() {
             </Magnetic>
           </div>
 
-          {/* STATS */}
+          {/* Stats */}
           <div className="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-4">
-            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:border-accent">
+            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:-translate-y-1 hover:border-accent">
               <div className="text-2xl">🧪</div>
               <p className="mt-2 text-2xl font-bold text-accent">2+</p>
               <p className="text-xs text-fg-muted">Years QA</p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:border-accent">
+            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:-translate-y-1 hover:border-accent">
               <div className="text-2xl">📋</div>
               <p className="mt-2 text-2xl font-bold text-accent">500+</p>
               <p className="text-xs text-fg-muted">Test Cases</p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:border-accent">
+            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:-translate-y-1 hover:border-accent">
               <div className="text-2xl">⚡</div>
               <p className="mt-2 text-2xl font-bold text-accent">35%</p>
               <p className="text-xs text-fg-muted">Regression Saved</p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:border-accent">
+            <div className="rounded-2xl border border-border bg-surface/70 p-4 backdrop-blur transition hover:-translate-y-1 hover:border-accent">
               <div className="text-2xl">🛡️</div>
               <p className="mt-2 text-2xl font-bold text-accent">99%</p>
               <p className="text-xs text-fg-muted">Workflow Stability</p>
@@ -131,14 +137,30 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-        <div className="relative flex h-[620px] items-center justify-center">
-          {/* 3D Scene */}
-          <div className="-translate-x-8">
+        <div className="relative isolate h-[680px] w-[560px] overflow-visible">
+          {/* 3D Background Scene */}
+          <div className="pointer-events-none absolute top-[80px] left-[120px] z-0 scale-[0.88]">
             <HeroScene />
           </div>
 
-          {/* Dashboard */}
-          <div className="absolute bottom-6 right-0 w-[390px]">
+          {/* Green Glow */}
+          <div className="absolute left-24 top-28 -z-10 h-72 w-72 rounded-full bg-accent/20 blur-[120px]" />
+
+          {/* Blue Glow */}
+          <div className="absolute right-6 bottom-12 -z-10 h-64 w-64 rounded-full bg-blue-500/20 blur-[120px]" />
+
+          {/* Foreground Layers */}
+          <div
+            className="absolute top-[300px] left-0 z-50"
+            style={{
+              transformStyle: "preserve-3d",
+              pointerEvents: "auto",
+            }}
+          >
+            <Profile3D />
+          </div>
+
+          <div className="absolute top-[0px] left-[270px] z-20 w-[400px]">
             <QADashboard />
           </div>
         </div>

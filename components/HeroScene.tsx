@@ -11,54 +11,56 @@ import {
 
 function Dashboard() {
   return (
-    <Float speed={2} rotationIntensity={0.3} floatIntensity={0.8}>
-      {/* Main Panel */}
-      <RoundedBox args={[5.5, 3.5, 0.25]} radius={0.15}>
-        <meshStandardMaterial
-          color="#161616"
-          metalness={0.8}
-          roughness={0.25}
-        />
-      </RoundedBox>
+    <Float speed={2} rotationIntensity={0.25} floatIntensity={0.7}>
+      <group rotation={[0, -0.25, 0]}>
+        {/* Main Panel */}
+        <RoundedBox args={[5.5, 3.5, 0.25]} radius={0.15}>
+          <meshStandardMaterial
+            color="#161616"
+            metalness={0.8}
+            roughness={0.25}
+          />
+        </RoundedBox>
 
-      {/* Top Left */}
-      <mesh position={[-1.4, 0.8, 0.15]}>
-        <boxGeometry args={[1.5, 0.7, 0.05]} />
-        <meshStandardMaterial color="#3ecf8e" />
-      </mesh>
+        {/* Top Left */}
+        <mesh position={[-1.4, 0.8, 0.15]}>
+          <boxGeometry args={[1.5, 0.7, 0.05]} />
+          <meshStandardMaterial color="#3ecf8e" />
+        </mesh>
 
-      {/* Top Right */}
-      <mesh position={[1.4, 0.8, 0.15]}>
-        <boxGeometry args={[1.5, 0.7, 0.05]} />
-        <meshStandardMaterial color="#5b8cff" />
-      </mesh>
+        {/* Top Right */}
+        <mesh position={[1.4, 0.8, 0.15]}>
+          <boxGeometry args={[1.5, 0.7, 0.05]} />
+          <meshStandardMaterial color="#5b8cff" />
+        </mesh>
 
-      {/* Graph */}
-      <mesh position={[0, -0.35, 0.15]}>
-        <boxGeometry args={[4.2, 1.1, 0.05]} />
-        <meshStandardMaterial color="#2b2b2b" />
-      </mesh>
+        {/* Graph */}
+        <mesh position={[0, -0.35, 0.15]}>
+          <boxGeometry args={[4.2, 1.1, 0.05]} />
+          <meshStandardMaterial color="#2b2b2b" />
+        </mesh>
 
-      {/* Status */}
-      <Text
-        position={[0, -1.15, 0.18]}
-        fontSize={0.18}
-        color="#3ecf8e"
-        anchorX="center"
-        anchorY="middle"
-      >
-        ALL TESTS PASSED ✓
-      </Text>
+        <Text
+          position={[0, -1.15, 0.18]}
+          fontSize={0.18}
+          color="#3ecf8e"
+          anchorX="center"
+          anchorY="middle"
+        >
+          ALL TESTS PASSED ✓
+        </Text>
+      </group>
     </Float>
   );
 }
 
 export default function HeroScene() {
   return (
-    <div className="h-[420px] w-[520px]">
-      <Canvas camera={{ position: [0, 0, 8], fov: 32 }}>
+    <div className="pointer-events-none h-[430px] w-[520px]">
+      <Canvas camera={{ position: [0, 0, 9], fov: 30 }} gl={{ alpha: true }}>
         <ambientLight intensity={1.4} />
         <directionalLight position={[5, 5, 5]} intensity={3} />
+
         <Environment preset="city" />
 
         <Dashboard />
@@ -87,7 +89,7 @@ export default function HeroScene() {
         <Float speed={2} floatIntensity={2}>
           <group position={[3.7, 1.3, -1]}>
             <mesh>
-              <boxGeometry args={[1.0, 0.4, 0.05]} />
+              <boxGeometry args={[1, 0.4, 0.05]} />
               <meshStandardMaterial color="#ff9800" />
             </mesh>
 
@@ -147,7 +149,7 @@ export default function HeroScene() {
           enableZoom={false}
           enablePan={false}
           autoRotate
-          autoRotateSpeed={0.5}
+          autoRotateSpeed={0.45}
         />
       </Canvas>
     </div>
